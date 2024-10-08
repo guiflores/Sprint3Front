@@ -1,0 +1,161 @@
+:root {
+    --background-color: #000;
+    --primary-color: #1e90ff;
+    --secondary-color: #fff;
+    --text-color: #fff;
+    --header-background: rgba(0, 0, 0, 0.8);
+    --cor0: #22D4FD;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--header-background);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: var(--cor0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--cor0);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex; 
+    align-items: center;
+}
+
+.nav-links li {
+    display:inline; 
+}
+
+.contatos{
+    height: 100vh;
+}
+
+.comente-container {
+    background: linear-gradient(to bottom, var(--background-color) 0%, #22D4FD 100%);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 50%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin: 40px auto;
+    margin-top: 210px;
+}
+
+.comente-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.comente-container textarea, .comente-container input {
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+
+.comente-container textarea::placeholder, .comente-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.comente-container button {
+    width: 80%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    background: #1e3c72;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comente-container button:hover {
+    background: #162b57;
+}
+
+@media (max-width: 1000px) {
+    .menu-toggle {
+        display: block; 
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column; 
+        position: absolute; 
+        top: 40px; 
+        right: 0; 
+        background-color: var(--header-background);
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 515px) {
+    .comente-container {
+        width: 70%;   
+    } 
+}
